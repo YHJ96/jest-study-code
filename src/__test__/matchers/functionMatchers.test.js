@@ -71,13 +71,14 @@ describe("toHaveReturned 확인하기", () => {
 
 describe("toHaveReturnedTimes 확인하기", () => {
   // 함수가 결과값이 몇번 호출되었는지 확인한다.
-  test("add 함수 return 여부")
-  const add = jest.fn();
-  add.mockReturnValue(3);
-  const log = jest.fn();
-  add(1, 2, log);
-  add(1, 2, log);
-  expect(add).toHaveReturnedTimes(2);
+  test("add 함수 return 여부", () => {
+    const add = jest.fn();
+    add.mockReturnValue(3);
+    const log = jest.fn();
+    add(1, 2, log);
+    add(1, 2, log);
+    expect(add).toHaveReturnedTimes(2);
+  })
 });
 
 describe("toHaveReturnedWith 확인하기", () => {
